@@ -23,7 +23,9 @@ def os_paper(request):
     stu_name = request.POST['stu_name']
     paper_name = request.POST['paper_name']
     paper_src = request.POST['paper_src']
-    ret = info.add_os_paper(stu_name, paper_src, paper_name)
+    ret, res = info.add_os_paper(stu_name, paper_src, paper_name)
+    if res is not None:
+        return HttpResponse(res)
     if ret:
         return HttpResponse("修改成功")
     else:
