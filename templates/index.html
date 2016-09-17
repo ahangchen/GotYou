@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>专硕集中营</title>
+    <!--Import Google Icon Font-->
+    {% load staticfiles %}
+    <link href="{% static "css/md-icon.css" %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "css/materialize.css" %}" media="screen,projection"/>
+    <link rel="stylesheet" href="{% static "css/base.css" %}" media="screen,projection"/>
+    <link rel="stylesheet" href="{% static "css/main.css" %}" media="screen,projection"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+</head>
+<body>
+<header>
+    <nav class="top-nav">
+        <div class="container">
+            <div class="nav-wrapper"><a class="page-title">专硕集中营</a></div>
+        </div>
+    </nav>
+    <div class="container" id="nav_menu">
+        <a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only">
+            <i class="material-icons">menu</i>
+        </a>
+    </div>
+    <ul id="nav-mobile" class="side-nav" style="transform: translateX(0%);">
+        <li class="logo center-align">
+            <a id="logo-container" href="http://materializecss.com/" class="brand-logo">
+                <object id="front-page-logo" type="image/svg+xml" data="{% static "img/materialize.svg" %}">Your browser does
+                    not support SVG
+                </object>
+            </a>
+        </li>
+        <!--<li class="search">-->
+        <!--<div class="search-wrapper card">-->
+        <!--<input id="search"><i class="material-icons">search</i>-->
+        <!--<div class="search-results"></div>-->
+        <!--</div>-->
+        <!--</li>-->
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+                <li class="bold" id="nav_about"><a href="#!" class="waves-effect waves-teal">About</a></li>
+                <li class="bold"><a class="collapsible-header  waves-effect waves-teal">课程</a>
+                    <div class="collapsible-body" style="">
+                        <ul>
+                            <li id="nav_invite"><a href="#!">操作系统论文选题</a></li>
+
+                        </ul>
+                    </div>
+                </li>
+
+            </ul>
+        </li>
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+                <li class="bold"><a class="collapsible-header  waves-effect waves-teal">其他</a>
+                    <div class="collapsible-body" style="">
+                        <ul>
+                            <li id="nav_job_info"><a href="#!">还没写呢</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+            </ul>
+        </li>
+
+    </ul>
+</header>
+<main>
+    <iframe id="content-frame" name="content_frame" class="main-content"
+            onload="this.height=content-frame.document.body.scrollHeight" frameborder="0" src="class/os"></iframe>
+    <!--<div class="container">test</div>-->
+</main>
+<footer class="page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">WeMeet项目组</h5>
+                <p class="grey-text text-lighten-4">团队主页：<a href="http://git.oschina.net/underarmy" class="white-text">http://git.oschina.net/underarmy</a>
+                </p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">友情链接</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="http://www.scut.edu.cn">华南理工大学</a></li>
+                    <li><a class="grey-text text-lighten-3" href="https://github.com/ahangchen">Github · ahangchen</a>
+                    </li>
+                    <li><a class="grey-text text-lighten-3" href="http://ahangchen.site">技术博客 · 梦里风林</a></li>
+                    <li><a class="grey-text text-lighten-3" href="https://github.com/xx-net/xx-net">科学上网</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2016 - 2026 Apache License 2
+            <a class="grey-text text-lighten-4 right" href="http://ahangchen.site">More Links</a>
+        </div>
+    </div>
+</footer>
+
+<!--</div>-->
+<!--Import jQuery before materialize.js-->
+<script src="{% static "js/jquery-2.1.1.min.js" %}"></script>
+<script src="{% static "js/materialize.js" %}"></script>
+<script src="{% static "js/index.js" %}"></script>
+</body>
+</html>

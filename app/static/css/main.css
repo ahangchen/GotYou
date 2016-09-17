@@ -1,0 +1,23 @@
+main {
+    min-height: 800px;
+}
+
+.main-content {
+    width: 100%;
+    /*height: 900px;*/
+    padding-left: 240px;
+}
+
+nav {
+    padding-left: 240px;
+}
+
+
+footer.page-footer {
+    margin: 0;
+    padding-left: 240px;
+}
+
+.side-nav #logo-container {
+    margin-top: 32px;
+}
