@@ -19,6 +19,7 @@
 
         <form class="col s12" action="os_paper" method="post">
             {% csrf_token %}
+
             <div class="row">
                 <div class="input-field col s12">
                     <input placeholder="你的名字" id="team_name" type="text" class="validate" name="stu_name" value="">
@@ -29,7 +30,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <select name="paper_src">
-                        <option value="" disabled selected>请选择</option>
+                        <option value="-1" disabled selected>请选择</option>
                         <option value="0">osdi2014</option>
                         <option value="1">sosp2015</option>
                         <option value="2">osdi2016</option>
@@ -50,7 +51,27 @@
                 </button>
             </div>
 
+            <div class="row">
+                <div class="col s12 m7">
+                    <div class="card horizontal">
+                        <div class="card-stacked">
+                            <div class="card-content">
+                                <p>- 在这里输入对应的信息以添加你的选题<br/>
+                                    - 如果存在重复选题，会返回同学的名单，否则会返回添加成功。<br/>
+                                    - 如果需要修改论文，也是直接在这里输入并提交<br/>
+                                    - 修改时如果存在重复选题，也会有相应提示，否则返回修改成功<br/>
+                                </p>
+                            </div>
+                            <div class="card-action">
+                                <a href="#">提示</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br/>
 
+
+            </div>
         </form>
 
     </div>
