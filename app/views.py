@@ -23,7 +23,7 @@ def class_os(request):
 def os_paper(request):
     stu_name = request.POST['stu_name']
     paper_name = request.POST['paper_name']
-    paper_src = request.POST['paper_src']
+    paper_src = request.POST.get('paper_src', -1)
     if invalid_stu_name(stu_name) or invalid_paper_name(paper_name) or paper_src == -1:
         print(invalid_stu_name(stu_name))
         print(invalid_paper_name(paper_name))
