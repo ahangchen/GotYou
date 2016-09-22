@@ -1,11 +1,14 @@
+from datetime import datetime
+
 from django.http import HttpResponse
 from django.shortcuts import render
 from app.ctrl import info
 
-
 # Create your views here.
+from app.ctrl.info import get_db_talks
 from app.util.request import invalid_stu_name, invalid_paper_name
 from app.util.table import test2xls
+from app.util.time import is_future
 
 
 def main(request):
@@ -40,3 +43,17 @@ def os_paper(request):
 
 def get_os_result(request):
     return test2xls()
+
+
+def db(request):
+    return render(request, 'class/db.html', get_db_talks())
+
+
+def db_talk(request):
+    stu_name = request.POST['stu_names']
+    topic = request.POST['topic']
+    if is_future(2016, 9, 22, 21, 0, 0):
+        return HttpResponse('还没到开始时间，9月23日晚上21:00开始')
+    else:
+        info.add_db_talk(stu_name, topic)
+        return db(request)

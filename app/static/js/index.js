@@ -8,6 +8,9 @@ $(document).ready(function() {
     $('#nav_invite').click(function (e) {
         $('#content-frame').attr('src', 'class/os');
     });
+    $('#nav_db_talk').click(function (e) {
+        $('#content-frame').attr('src', 'class/db');
+    });
     $("#content-frame").load(function(){
         var content_height = $(this).contents().find("body").height();
         $(this).height(content_height);

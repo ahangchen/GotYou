@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <title>团队邀请</title>
+    <!-- CSS  -->
+    {% load staticfiles %}
+    <link href="{% static "css/md-icon.css" %}" rel="stylesheet">
+    <link href="{% static "css/materialize.css" %}" rel="stylesheet">
+    <link href="{% static "css/about.css" %}" rel="stylesheet">
+    <link href="{% static "css/os.css" %}" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+
+        <form class="col s12" action="add_db_talk" method="post">
+            {% csrf_token %}
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <input placeholder="多人用空格分开" id="team_name" type="text" class="validate" name="stu_names" value="">
+                    <label for="team_name">名字</label>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input placeholder="演讲的内容" id="leader" type="text" class="validate" name="topic" value="">
+                    <label for="leader">主题</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <button id="inv_btn" class="btn waves-effect waves-light" type="submit" name="action">提交
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+
+
+        </form>
+        <div class="row">
+            <table class="striped centered">
+                <thead>
+                <tr>
+                    <th data-field="id">名字(们)</th>
+                    <th data-field="name">主题</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                {% for db_talk in talks %}
+                    <tr>
+                        <td>{{ db_talk.stus }}</td>
+                        <td>{{ db_talk.topic }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!--  Scripts-->
+<script src="{% static "js/jquery-2.1.1.min.js" %}"></script>
+<script src="{% static "js/materialize.js" %}"></script>
+<script src="{% static "js/os.js" %}"></script>
+</body>
+</html>

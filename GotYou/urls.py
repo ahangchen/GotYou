@@ -22,6 +22,9 @@ urlpatterns = [
     url(r'^main$', views.main),
     url(r'^about$', views.about),
     url(r'^class/os$', views.class_os),
+    url(r'^class/db', views.db),
+    url(r'^class/db_talk', views.db_talk),
     url(r'^class/os_paper$', views.os_paper),
     url(r'^get_os_result', views.get_os_result),
+    url(r'^class/add_db_talk', views.db_talk),
 ]
