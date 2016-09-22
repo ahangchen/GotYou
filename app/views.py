@@ -52,7 +52,7 @@ def db(request):
 def db_talk(request):
     stu_name = request.POST['stu_names']
     topic = request.POST['topic']
-    if is_future(2016, 9, 22, 21, 0, 0):
+    if is_future(2016, 9, 22, 23, 26, 0):
         return HttpResponse('还没到开始时间，9月23日晚上21:00开始')
     else:
         info.add_db_talk(stu_name, topic)
