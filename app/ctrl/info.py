@@ -22,8 +22,7 @@ def add_os_paper(stu_name, src, paper_name):
 
 
 def add_db_talk(stu_names, topic):
-    db_talk = DBTalkInfo(stu_names=stu_names, topic=topic)
-    db_talk.save()
+    DBTalkInfo.objects.update_or_create(stu_names=stu_names, defaults={'stu_names': stu_names, 'topic': topic})
     return True
 
 
